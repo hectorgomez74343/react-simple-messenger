@@ -34,35 +34,13 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: "file-loader",
-          },
-        ],
-      },
-      {
-        test: /\.json$/,
-        loader: "json-loader",
-      },
-      {
-        test: /\.svg$/,
-        loader: "svg-inline-loader",
-      },
-      {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif|svg)$/i,
         use: [
           {
             loader: "url-loader",
-            options: {
-              limit: 8192,
-            },
           },
         ],
       },
     ],
-  },
-  optimization: {
-    splitChunks: { chunks: "all" },
   },
 };
